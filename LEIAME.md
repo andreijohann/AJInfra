@@ -4,10 +4,10 @@ Set of infrastructure components for re-use in .NET Core/net5/net6 enterprise ap
 
 ## Set of components
 
-- `Aj.Infra.Service` (Service Layer)
-- `Aj.Infra.Data` (Infrastructure Layer - Data Access/Manipulation)
+- `Aj.Infra.Service` (Service layer)
+- `Aj.Infra.Data` (Infrastructure layer - Data Access/Manipulation)
 
-- `Aj.Infra.Dto` (Infrastructure Layer - DTOs e PEs)
+- `Aj.Infra.Dto` (Infrastructure layer - DTOs and Persistence Entities)
 - `Aj.Infra.Utils` (Utility classes)
 
 ## Prerequisites
