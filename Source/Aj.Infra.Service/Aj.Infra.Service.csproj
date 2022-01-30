@@ -4,10 +4,10 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <Description>Infrastructure layer - DTOs and Persistence Entities</Description>
-    <Copyright>Andrei Johann - 2022</Copyright>
-    <Authors>Andrei Johann</Authors>
-    <Version>1.0.0</Version>
+	<Description>Service layer</Description>
+	<Copyright>Andrei Johann - 2022</Copyright>
+	<Authors>Andrei Johann</Authors>
+	<Version>1.0.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,5 +17,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <NoWarn>1701;1702;1705;1591</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Dao\" />
+    <Folder Include="Security\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
 
 </Project>
