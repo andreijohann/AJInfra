@@ -19,10 +19,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Security\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Aj.Infra.Dto\Aj.Infra.Dto.csproj" />
   </ItemGroup>
 
