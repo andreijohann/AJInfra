@@ -19,9 +19,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dao\" />
     <Folder Include="Security\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aj.Infra.Dto\Aj.Infra.Dto.csproj" />
   </ItemGroup>
 
 </Project>
