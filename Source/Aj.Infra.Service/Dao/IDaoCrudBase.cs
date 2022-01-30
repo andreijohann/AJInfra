@@ -2,6 +2,9 @@
 
 namespace Aj.Infra.Service.Dao
 {
+    /// <summary>
+    /// Basic Insert, Update, Delete operations (CUD)
+    /// </summary>
     public interface IDaoCrudBase<TPersistEnt, TId>
         where TPersistEnt : class, IPersistenceEnt<TId>
     {

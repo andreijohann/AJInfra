@@ -4,6 +4,9 @@ using System.Linq.Expressions;
 
 namespace Aj.Infra.Service.Dao
 {
+    /// <summary>
+    /// Basic Insert, Update, Delete operations, plus Get. (CRUD)
+    /// </summary>
     public interface IDaoCrud<TPersistEnt, TId> : IDaoCrudBase<TPersistEnt, TId>
         where TPersistEnt : class, IPersistenceEnt<TId>
     {
