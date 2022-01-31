@@ -9,7 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BAF91B82
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aj.Infra.Dto", "Aj.Infra.Dto\Aj.Infra.Dto.csproj", "{1DC9813C-207B-490A-A2D3-99FB5C87125D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aj.Infra.Service", "Aj.Infra.Service\Aj.Infra.Service.csproj", "{EA653B3A-A331-46B1-AB47-9DCC6680AA5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aj.Infra.Service", "Aj.Infra.Service\Aj.Infra.Service.csproj", "{EA653B3A-A331-46B1-AB47-9DCC6680AA5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aj.Infra.Data", "Aj.Infra.Data\Aj.Infra.Data.csproj", "{06C8743E-1F47-425A-9E17-BECB7E6B8AAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{EA653B3A-A331-46B1-AB47-9DCC6680AA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA653B3A-A331-46B1-AB47-9DCC6680AA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA653B3A-A331-46B1-AB47-9DCC6680AA5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06C8743E-1F47-425A-9E17-BECB7E6B8AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C8743E-1F47-425A-9E17-BECB7E6B8AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C8743E-1F47-425A-9E17-BECB7E6B8AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06C8743E-1F47-425A-9E17-BECB7E6B8AAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1DC9813C-207B-490A-A2D3-99FB5C87125D} = {1E9BD6BD-2DF9-43F4-BCFD-0190EC6DC16E}
 		{EA653B3A-A331-46B1-AB47-9DCC6680AA5D} = {1E9BD6BD-2DF9-43F4-BCFD-0190EC6DC16E}
+		{06C8743E-1F47-425A-9E17-BECB7E6B8AAF} = {1E9BD6BD-2DF9-43F4-BCFD-0190EC6DC16E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {401FF940-2BC7-43CF-B561-F85873F9B504}
