@@ -19,10 +19,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Folder Include="Dao\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
 	</ItemGroup>
 

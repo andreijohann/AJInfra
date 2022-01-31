@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Aj.Infra.Data.Context
 {
+    /// <summary>
+    /// Unit of Work with implementation of partial/intermediate saves through Entity Framework transaction support.
+    /// </summary>
     public class EfUowWithIntermediateSavings<TContext> : EfUow<TContext>, IUowWithIntermediateSavings where TContext : EfContext
     {
         private bool _disposed;
