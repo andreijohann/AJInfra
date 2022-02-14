@@ -9,8 +9,8 @@ namespace Aj.Infra.Service.Services
     /// <typeparam name="TId">Type of the ID of the object</typeparam>
     public interface IServiceCrud<TDto, TId> where TDto : class
     {
-        CreateResultDto<TId> Insert(TDto dot);
-        ResultDto Update(TId id, TDto dot);
+        CreateResultDto<TId> Insert(TDto dto);
+        ResultDto Update(TId id, TDto dto);
         ResultDto Delete(TId id);
         QueryResultDto<TDto> Get(TId id);
     }

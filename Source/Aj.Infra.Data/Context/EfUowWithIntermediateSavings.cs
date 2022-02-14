@@ -17,7 +17,7 @@ namespace Aj.Infra.Data.Context
         /// <summary>
         /// Signals the start of transaction and open a transaction in the database
         /// </summary>
-        public virtual void Begin()
+        public override void Begin()
         {
             base.Begin();
             _disposed = false;
