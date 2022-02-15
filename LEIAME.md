@@ -4,6 +4,7 @@ Set of infrastructure components for re-use in .NET Core/net5/net6 enterprise ap
 
 ## Set of components
 
+- `Aj.Infra.Presentation` (Presentation layer)
 - `Aj.Infra.Service` (Service layer)
 - `Aj.Infra.Data` (Infrastructure layer - Data Access/Manipulation)
 
