@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./Source/AJInfra.sln
     - name: Build
-      run: dotnet build Source/AJInfra.sln --no-restore
+      run: dotnet build ./Source/AJInfra.sln --no-restore
     - name: Test
-      run: dotnet test Source/AJInfra.sln --no-build --verbosity normal
+      run: dotnet test ./Source/AJInfra.sln --no-build --verbosity normal
