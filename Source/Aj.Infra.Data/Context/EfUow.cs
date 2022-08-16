@@ -35,6 +35,14 @@ namespace Aj.Infra.Data.Context
         }
 
         /// <summary>
+        /// Saves changes in context (SaveChangesAsync).
+        /// </summary>
+        public virtual async Task CommitAsync()
+        {
+            await Context.SaveChangesAsync();
+        }
+
+        /// <summary>
         /// Discards context changes (DiscardChanges).
         /// </summary>
         public virtual void Rollback()
@@ -54,8 +62,6 @@ namespace Aj.Infra.Data.Context
                 _disposed = true;
             }
         }
-
-
 
     }
 }

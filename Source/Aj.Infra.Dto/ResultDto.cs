@@ -2,7 +2,6 @@
 {
     public class ResultDto
     {
-
         public ResultDto()
         {
             Errors = new List<ErrorDto>();
@@ -19,9 +18,7 @@
         }
 
         public IEnumerable<ErrorDto> Errors { get; set; }
-        public bool Valid { get { return Errors != null && !Errors.Any(); } }
-
-
+        public bool IsValid { get { return Errors != null && !Errors.Any(); } }
 
     }
 }

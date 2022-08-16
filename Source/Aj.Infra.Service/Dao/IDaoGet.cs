@@ -1,6 +1,4 @@
-﻿using Aj.Infra.Dto;
-using System;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
 namespace Aj.Infra.Service.Dao
 {
@@ -10,6 +8,8 @@ namespace Aj.Infra.Service.Dao
     public interface IDaoGet
     {
         TPersistEnt Get<TPersistEnt>(Expression<Func<TPersistEnt, bool>> filter) where TPersistEnt : class;
+        Task<TPersistEnt> GetAsync<TPersistEnt>(Expression<Func<TPersistEnt, bool>> filter) where TPersistEnt : class;
         TPersistEnt Get<TPersistEnt>(Expression<Func<TPersistEnt, bool>> filter, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class;
+        Task<TPersistEnt> GetAsync<TPersistEnt>(Expression<Func<TPersistEnt, bool>> filter, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class;
     }
 }

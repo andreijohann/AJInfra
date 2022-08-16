@@ -17,6 +17,11 @@ namespace Aj.Infra.Data.Dao
             IQueryable<TPersistEnt> query = Context.Set<TPersistEnt>().Where(filter);
             return query.AsNoTracking().SingleOrDefault();
         }
+        public async Task<TPersistEnt> GetAsync<TPersistEnt>(Expression<Func<TPersistEnt, bool>> filter) where TPersistEnt : class
+        {
+            IQueryable<TPersistEnt> query = Context.Set<TPersistEnt>().Where(filter);
+            return await query.AsNoTracking().SingleOrDefaultAsync();
+        }
 
         public TPersistEnt Get<TPersistEnt>(Expression<Func<TPersistEnt, bool>> filter, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class
         {
@@ -25,6 +30,12 @@ namespace Aj.Infra.Data.Dao
             return query.AsNoTracking().SingleOrDefault();
         }
 
+        public async Task<TPersistEnt> GetAsync<TPersistEnt>(Expression<Func<TPersistEnt, bool>> filter, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class
+        {
+            IQueryable<TPersistEnt> query = Context.Set<TPersistEnt>().Where(filter);
+            query = EntityWithRelatedProp(query, relatedProp);
+            return await query.AsNoTracking().SingleOrDefaultAsync();
+        }
 
     }
 }

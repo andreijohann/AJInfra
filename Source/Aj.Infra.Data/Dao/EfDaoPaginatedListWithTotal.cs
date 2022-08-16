@@ -7,7 +7,7 @@ namespace Aj.Infra.Data.Dao
     /// <summary>
     /// Paginated list returning total of occurrences
     /// </summary>
-    internal class EfDaoPaginatedListWithTotal : EfDao, IDaoPaginatedListWithTotal
+    public class EfDaoPaginatedListWithTotal : EfDao, IDaoPaginatedListWithTotal
     {
         public EfDaoPaginatedListWithTotal(DbContext context) : base(context)
         { }

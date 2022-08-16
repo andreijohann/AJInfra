@@ -15,12 +15,28 @@ namespace Aj.Infra.Data.Dao
         {
             TPersistEnt ent;
             var t = typeof(TId);
-            if (t.IsValueType) { 
+            if (t.IsValueType)
+            {
                 ent = Context.Set<TPersistEnt>().Find(id);
-            } 
-            else 
+            }
+            else
             {
                 ent = Context.Set<TPersistEnt>().Find(t.GetProperties().Select(p => p.GetValue(id)).ToArray());
+            }
+            return ent;
+        }
+
+        public async Task<TPersistEnt> GetByIdAsync(TId id)
+        {
+            TPersistEnt ent;
+            var t = typeof(TId);
+            if (t.IsValueType)
+            {
+                ent = await Context.Set<TPersistEnt>().FindAsync(id);
+            }
+            else
+            {
+                ent = await Context.Set<TPersistEnt>().FindAsync(t.GetProperties().Select(p => p.GetValue(id)).ToArray());
             }
             return ent;
         }
@@ -32,6 +48,12 @@ namespace Aj.Infra.Data.Dao
             return query.SingleOrDefault();
         }
 
+        public async Task<TPersistEnt> GetAsync(Expression<Func<TPersistEnt, bool>> filter, params Expression<Func<TPersistEnt, object>>[] relatedProp)
+        {
+            IQueryable<TPersistEnt> query = Context.Set<TPersistEnt>().Where(filter);
+            query = EntityWithRelatedProp(query, relatedProp);
+            return await query.SingleOrDefaultAsync();
+        }
 
     }
 }

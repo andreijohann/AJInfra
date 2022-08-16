@@ -8,6 +8,8 @@ namespace Aj.Infra.Service.Dao
     public interface IDaoListWithFilter
     {
         IEnumerable<TPersistEnt> List<TPersistEnt>(Expression<Func<TPersistEnt, bool>> filter) where TPersistEnt : class;
+        Task<IEnumerable<TPersistEnt>> ListAsync<TPersistEnt>(Expression<Func<TPersistEnt, bool>> filter) where TPersistEnt : class;
         IEnumerable<TPersistEnt> List<TPersistEnt>(Expression<Func<TPersistEnt, bool>> filter, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class;
+        Task<IEnumerable<TPersistEnt>> ListAsync<TPersistEnt>(Expression<Func<TPersistEnt, bool>> filter, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class;
     }
 }

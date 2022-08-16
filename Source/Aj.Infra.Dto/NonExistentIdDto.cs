@@ -7,5 +7,11 @@
             Message = "Non-existent ID informed";
             Context = "id";
         }
+
+        public NonExistentIdDto(string message, string context = "id")
+        {
+            Message = message;
+            Context = context;
+        }
     }
 }

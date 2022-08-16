@@ -12,7 +12,7 @@ namespace Aj.Infra.Data.Context
         private bool _disposed;
         private IDbContextTransaction _dbContextTransaction;
 
-        public EfUowWithIntermediateSavings(TContext context) : base(context) {  }
+        public EfUowWithIntermediateSavings(TContext context) : base(context) { }
 
         /// <summary>
         /// Signals the start of transaction and open a transaction in the database
@@ -22,6 +22,13 @@ namespace Aj.Infra.Data.Context
             base.Begin();
             _disposed = false;
             _dbContextTransaction = ((DbContext)base.Context).Database.BeginTransaction();
+        }
+
+        public async Task BeginAsync()
+        {
+            base.Begin();
+            _disposed = false;
+            _dbContextTransaction = await ((DbContext)base.Context).Database.BeginTransactionAsync();
         }
 
         /// <summary>
@@ -34,6 +41,15 @@ namespace Aj.Infra.Data.Context
         }
 
         /// <summary>
+        /// Saves changes in context (SaveChangesAsync) and Commit the open transaction Async.
+        /// </summary>
+        public override async Task CommitAsync()
+        {
+            await base.CommitAsync();
+            await _dbContextTransaction.CommitAsync();
+        }
+
+        /// <summary>
         /// Discards context changes (DiscardChanges) and Rollback the open transaction.
         /// </summary>
         public override void Rollback()
@@ -42,12 +58,23 @@ namespace Aj.Infra.Data.Context
             _dbContextTransaction.Rollback();
         }
 
+        public async Task RollbackAsync()
+        {
+            base.Rollback();
+            await _dbContextTransaction.RollbackAsync();
+        }
+
         /// <summary>
         /// Saves the changes made so far.
         /// </summary>
         public void Save()
         {
             base.Commit(); // DbContext.SaveChanges()
+        }
+
+        public async Task SaveAsync()
+        {
+            await base.CommitAsync(); // DbContext.SaveChangesAsync()
         }
 
         protected override void Dispose(bool disposing)
@@ -61,8 +88,6 @@ namespace Aj.Infra.Data.Context
 
             _disposed = true;
         }
-
-
 
     }
 }

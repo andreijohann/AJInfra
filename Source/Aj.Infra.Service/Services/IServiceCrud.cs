@@ -10,8 +10,12 @@ namespace Aj.Infra.Service.Services
     public interface IServiceCrud<TDto, TId> where TDto : class
     {
         CreateResultDto<TId> Insert(TDto dto);
+        Task<CreateResultDto<TId>> InsertAsync(TDto dto);
         ResultDto Update(TId id, TDto dto);
+        Task<ResultDto> UpdateAsync(TId id, TDto dto);
         ResultDto Delete(TId id);
+        Task<ResultDto> DeleteAsync(TId id);
         QueryResultDto<TDto> Get(TId id);
+        Task<QueryResultDto<TDto>> GetAsync(TId id);
     }
 }

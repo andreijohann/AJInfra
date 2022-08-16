@@ -8,10 +8,16 @@ namespace Aj.Infra.Service.Dao
     public interface IDaoLimitedList
     {
         IEnumerable<TPersistEnt> List<TPersistEnt>(int numberOfLines) where TPersistEnt : class;
+        Task<IEnumerable<TPersistEnt>> ListAsync<TPersistEnt>(int numberOfLines) where TPersistEnt : class;
         IEnumerable<TPersistEnt> List<TPersistEnt>(int numberOfLines, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class;
+        Task<IEnumerable<TPersistEnt>> ListAsync<TPersistEnt>(int numberOfLines, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class;
         IEnumerable<TPersistEnt> List<TPersistEnt>(int numberOfLines, Expression<Func<TPersistEnt, bool>> filter) where TPersistEnt : class;
+        Task<IEnumerable<TPersistEnt>> ListAsync<TPersistEnt>(int numberOfLines, Expression<Func<TPersistEnt, bool>> filter) where TPersistEnt : class;
         IEnumerable<TPersistEnt> List<TPersistEnt>(int numberOfLines, Expression<Func<TPersistEnt, bool>> filter, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class;
-        IEnumerable<TPersistEnt> List<TPersistEnt, TProprOrd>(int numberOfLines, Expression<Func<TPersistEnt, bool>> filter, Expression<Func<TPersistEnt,TProprOrd>> propOrder, bool ascending) where TPersistEnt : class;
+        Task<IEnumerable<TPersistEnt>> ListAsync<TPersistEnt>(int numberOfLines, Expression<Func<TPersistEnt, bool>> filter, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class;
+        IEnumerable<TPersistEnt> List<TPersistEnt, TProprOrd>(int numberOfLines, Expression<Func<TPersistEnt, bool>> filter, Expression<Func<TPersistEnt, TProprOrd>> propOrder, bool ascending) where TPersistEnt : class;
+        Task<IEnumerable<TPersistEnt>> ListAsync<TPersistEnt, TProprOrd>(int numberOfLines, Expression<Func<TPersistEnt, bool>> filter, Expression<Func<TPersistEnt, TProprOrd>> propOrder, bool ascending) where TPersistEnt : class;
         IEnumerable<TPersistEnt> List<TPersistEnt, TProprOrd>(int numberOfLines, Expression<Func<TPersistEnt, bool>> filter, Expression<Func<TPersistEnt, TProprOrd>> propOrder, bool ascending, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class;
+        Task<IEnumerable<TPersistEnt>> ListAsync<TPersistEnt, TProprOrd>(int numberOfLines, Expression<Func<TPersistEnt, bool>> filter, Expression<Func<TPersistEnt, TProprOrd>> propOrder, bool ascending, params Expression<Func<TPersistEnt, object>>[] relatedProp) where TPersistEnt : class;
     }
 }

@@ -14,6 +14,12 @@ namespace Aj.Infra.Data.Dao
         {
             Context.Set<TPersistEnt>().Add(entity);
         }
+
+        public virtual async Task InsertAsync(TPersistEnt entity)
+        {
+            await Context.Set<TPersistEnt>().AddAsync(entity);
+        }
+
         public virtual void Update(TPersistEnt entity)
         {
             var entry = Context.Entry(entity);
@@ -25,7 +31,6 @@ namespace Aj.Infra.Data.Dao
         {
             Context.Set<TPersistEnt>().Remove(entity);
         }
-
 
     }
 }
